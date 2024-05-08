@@ -1,11 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: "Jost", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .container .musicplayer {
+            width: 350px;
+            height: 550px;
+            padding: 40px;
+            /* display: flex;
+            flex-direction: column; */
+            display: grid;
+            place-items: center;
+            background: #f5f3f3;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.2), 0 20px 30px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .container .musicplayer .imgbx {
+            width: 250px;
+           aspect-ratio: 1;
+        }
+
+        .container .musicplayer .imgbx img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .container .musicplayer #title {
+            font-size: 25px;
+            margin-top: -30px;
+        }
+
+        .container .musicplayer #artist {
+            margin-top: -60px;
+            font-size: 20px;
+            color: rgb(108, 107, 107);
+        }
+
+        .container .musicplayer .controls {
+            width: 200px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: -60px;
+        }
+
+        .container .musicplayer .controls .fa-solid {
+            color: black;
+            cursor: pointer;
+            width: 500px;
+        }
+
+        .container .musicplayer .controls .fa-solid .main {
+            width: 500px;
+            background: red;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <div class="container">
+        <div class="musicplayer">
+            <div class="imgbx">
+                <img id="playerimg" src="" alt="">
+            </div>
+            <h3 id="title"></h3>
+            <h6 id="artist"></h6>
+            <!-- <input type="range" name="" id=""> -->
+            <audio id="audio" src=""></audio>
+            <div class="controls">
+                <i class="fa-solid fa-backward" id="previous" onclick="previousmusic()" title="previous"></i>
+                <i class="fa-solid fa-play" onclick="playmusic()" id="play" title="play"></i>
+                <i class="fa-solid fa-pause" onclick="pausemusic()" id="pause" title="pause"></i>
+                <i class="fa-solid fa-forward" id="next" onclick="nextmusic()" title="next"></i>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+
 </body>
+
 </html>
